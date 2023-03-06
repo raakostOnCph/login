@@ -8,15 +8,26 @@
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
+<br/>
 <a href="hello-servlet">bag muren via min servlet</a>
 <br>
 <br>
-<br>
 <a href="WEB-INF/hemmelig.jsp">bag muren</a>
-
 <br>
 <br>
-
 <a href="friside.jsp">fri</a>
+
+<br>
+<br>
+<br>
+
+<form action="hello-servlet" method="get">
+    <label for="navn">angiv navn:</label><br>
+    <input type="text" id="navn" name="navn" value="John"><br>
+    <label for="kode">skriv kode:</label><br>
+    <input type="text" id="kode" name="kode" value="Doe"><br><br>
+    <input type="submit" value="Submit">
+</form>
+
 </body>
 </html>

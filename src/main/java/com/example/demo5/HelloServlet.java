@@ -1,6 +1,12 @@
 package com.example.demo5;
 
+import com.example.demo5.Entitet.Person;
+
 import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -12,7 +18,23 @@ public class HelloServlet extends HttpServlet
 
     public void init()
     {
-        message = "Hello World!";
+        List<Person> personList = new ArrayList<>();
+
+        personList.add(new Person("ida", "666"));
+        personList.add(new Person("lone", "1234"));
+        personList.add(new Person("Lonny", "313"));
+        personList.add(new Person("Feehaar", "4545"));
+
+        Map<String, Person> personMap = new HashMap<>();
+
+        for (Person person : personList) {
+
+            personMap.put(person.getNavn(), person);
+        }
+
+        getServletContext().setAttribute("kunde", personMap);
+
+
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
@@ -25,7 +47,13 @@ public class HelloServlet extends HttpServlet
 //        out.println("<h1>" + message + "</h1>");
 //        out.println("</body></html>");
 
-        request.getRequestDispatcher("WEB-INF/hemmelig.jsp").forward(request,response);
+        String navn = request.getParameter("navn");
+        String kode = request.getParameter("kode");
+
+        System.out.println("det var hvad jeg fik " + navn + " " + kode);
+
+
+        //request.getRequestDispatcher("WEB-INF/hemmelig.jsp").forward(request,response);
 
     }
 
