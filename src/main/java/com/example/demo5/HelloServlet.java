@@ -47,6 +47,16 @@ public class HelloServlet extends HttpServlet
 
         System.out.println(navn + " " + kode);
 
+
+        if (request.getSession(false) != null ) {
+
+            System.out.println("vi kender allerede brugeren");
+            request.getRequestDispatcher("WEB-INF/hemmelig.jsp").forward(request,response);
+
+        }
+
+
+        // findes bruger
      if (!personMap.containsKey(navn)) {
 
          request.setAttribute("besked", "en bruger med det navn fandtes ikke !");
@@ -54,7 +64,7 @@ public class HelloServlet extends HttpServlet
          request.getRequestDispatcher("index.jsp").forward(request,response);
 
     }
-
+   // bruger kode er rigtig
      if (!personMap.get(navn).getKode().equalsIgnoreCase(kode)) {
 
          request.setAttribute("besked", "Koden er forkert, prøv igen");
@@ -65,8 +75,16 @@ public class HelloServlet extends HttpServlet
      }
 
 
-     request.setAttribute("navn", navn);
-     request.getRequestDispatcher("WEB-INF/hemmelig.jsp").forward(request,response);
+//     HttpSession session = request.getSession();
+//
+//
+//     request.setAttribute("navn", navn);
+//     request.setAttribute("id", session.getId());
+//
+//     session.setAttribute("navn", navn);
+//     session.setAttribute("brugerKode", kode);
+//
+//     request.getRequestDispatcher("WEB-INF/hemmelig.jsp").forward(request,response);
 
         //request.getRequestDispatcher("WEB-INF/hemmelig.jsp").forward(request,response);
 

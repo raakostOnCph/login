@@ -12,9 +12,24 @@
 </head>
 <body>
 
-<h1> du er nu bag muren </h1>
+dit sessionid er ${requestScope.id}
 
+dit navn er ${sessionScope.navn} og din kode er ${sessionScope.brugerKode}
+
+<h1> du er nu bag muren </h1>
+l
 <h1> velkommen  ${requestScope.navn}</h1>
+
+<br>
+<br>
+<br>
+
+
+<form action="ServletlogOut">
+
+    <input type="submit" value="log af">
+</form>
+
 
 
 </body>
