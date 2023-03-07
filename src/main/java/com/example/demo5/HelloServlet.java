@@ -65,7 +65,7 @@ public class HelloServlet extends HttpServlet
          request.getRequestDispatcher("index.jsp").forward(request,response);
 
     }
-   // bruger kode er rigtig
+   // bruger kode er ikke rigtig
      if (!personMap.get(navn).getKode().equalsIgnoreCase(kode)) {
 
          request.setAttribute("besked", "Koden er forkert, prøv igen");
@@ -79,7 +79,9 @@ public class HelloServlet extends HttpServlet
      HttpSession session = request.getSession();
 
 
-     request.setAttribute("navn", navn);
+
+
+     session.setAttribute("bruger",  personMap.get(navn));
      request.setAttribute("id", session.getId());
 
      session.setAttribute("navn", navn);

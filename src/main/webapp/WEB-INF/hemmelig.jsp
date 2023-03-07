@@ -14,10 +14,10 @@
 
 dit sessionid er ${requestScope.id}
 
-dit navn er ${sessionScope.navn} og din kode er ${sessionScope.brugerKode}
+dit navn er ${sessionScope.bruger.navn} og din kode er ${sessionScope.brugerKode}
 
 <h1> du er nu bag muren </h1>
-l
+
 <h1> velkommen  ${requestScope.navn}</h1>
 
 <br>
@@ -30,6 +30,13 @@ l
 </form>
 
 
+
+${requestScope.msg}
+
+<form action="ServletOversigt" method="get">
+
+    <input type="submit" value="Gå til admin side">
+</form>
 
 
 
