@@ -14,6 +14,8 @@
 
 <h1> du er nu bag muren </h1>
 
+<h1> velkommen  ${requestScope.navn}</h1>
+
 
 </body>
 </html>

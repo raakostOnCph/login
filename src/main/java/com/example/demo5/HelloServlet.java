@@ -55,6 +55,18 @@ public class HelloServlet extends HttpServlet
 
     }
 
+     if (!personMap.get(navn).getKode().equalsIgnoreCase(kode)) {
+
+         request.setAttribute("besked", "Koden er forkert, prøv igen");
+
+         request.getRequestDispatcher("index.jsp").forward(request,response);
+
+
+     }
+
+
+     request.setAttribute("navn", navn);
+     request.getRequestDispatcher("WEB-INF/hemmelig.jsp").forward(request,response);
 
         //request.getRequestDispatcher("WEB-INF/hemmelig.jsp").forward(request,response);
 
