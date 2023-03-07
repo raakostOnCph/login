@@ -75,16 +75,16 @@ public class HelloServlet extends HttpServlet
      }
 
 
-//     HttpSession session = request.getSession();
-//
-//
-//     request.setAttribute("navn", navn);
-//     request.setAttribute("id", session.getId());
-//
-//     session.setAttribute("navn", navn);
-//     session.setAttribute("brugerKode", kode);
-//
-//     request.getRequestDispatcher("WEB-INF/hemmelig.jsp").forward(request,response);
+     HttpSession session = request.getSession();
+
+
+     request.setAttribute("navn", navn);
+     request.setAttribute("id", session.getId());
+
+     session.setAttribute("navn", navn);
+     session.setAttribute("brugerKode", kode);
+
+     request.getRequestDispatcher("WEB-INF/hemmelig.jsp").forward(request,response);
 
         //request.getRequestDispatcher("WEB-INF/hemmelig.jsp").forward(request,response);
 
