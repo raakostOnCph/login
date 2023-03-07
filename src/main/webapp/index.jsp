@@ -21,6 +21,9 @@
 <br>
 <br>
 
+${requestScope.besked}
+<br>
+<br>
 <form action="hello-servlet" method="get">
     <label for="navn">angiv navn:</label><br>
     <input type="text" id="navn" name="navn" value="John"><br>

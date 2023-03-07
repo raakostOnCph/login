@@ -32,22 +32,28 @@ public class HelloServlet extends HttpServlet
             personMap.put(person.getNavn(), person);
         }
 
-        getServletContext().setAttribute("kunde", personMap);
+        getServletContext().setAttribute("kunder", personMap);
 
 
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
     {
-//        response.setContentType("text/html");
 
-        // Hello
-//        PrintWriter out = response.getWriter();
-//        out.println("<html><body>");
-//        out.println("<h1>" + message + "</h1>");
-//        out.println("</body></html>");
+        Map<String , Person> personMap = (Map<String, Person>) getServletContext().getAttribute("kunder");
 
+        String navn = request.getParameter("navn");
+        String kode = request.getParameter("kode");
 
+        System.out.println(navn + " " + kode);
+
+     if (!personMap.containsKey(navn)) {
+
+         request.setAttribute("besked", "en bruger med det navn fandtes ikke !");
+
+         request.getRequestDispatcher("index.jsp").forward(request,response);
+
+    }
 
 
         //request.getRequestDispatcher("WEB-INF/hemmelig.jsp").forward(request,response);
