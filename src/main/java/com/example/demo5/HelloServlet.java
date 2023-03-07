@@ -47,10 +47,7 @@ public class HelloServlet extends HttpServlet
 //        out.println("<h1>" + message + "</h1>");
 //        out.println("</body></html>");
 
-        String navn = request.getParameter("navn");
-        String kode = request.getParameter("kode");
 
-        System.out.println("det var hvad jeg fik " + navn + " " + kode);
 
 
         //request.getRequestDispatcher("WEB-INF/hemmelig.jsp").forward(request,response);
