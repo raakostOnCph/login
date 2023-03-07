@@ -15,15 +15,23 @@
 
 <h1> velkommen til adminstrator siden</h1>
 
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-<c:forEach var="person" items="${applicationScope.kunder}">
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
 
-    <br>
-    ${person.value.navn}
-
-
-
-</c:forEach>
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
 
 
 
@@ -32,13 +40,40 @@
     <tr>
         <th>Navn</th>
         <th>Valg</th>
-
     </tr>
+
+
+
+        <c:forEach var="person" items="${applicationScope.kunder}">
     <tr>
-        <td>palle</td>
-        <td>Maria Anders</td>
+
+
+
+
+        <td> ${person.value.navn}</td>
+
+        <td>
+
+            <form action="ServletSlet">
+
+                <input type="text" hidden name="valg" value="${person.value.navn}">
+                <input type="submit" value="Slet">
+            </form>
+
+
+            <form action="ServletEdit">
+
+                <input type="text" hidden name="Valg" value="${person.value.navn}">
+                <input type="submit" value="Edit">
+            </form>
+
+
+
+
+        </td>
 
     </tr>
+        </c:forEach>
 
 </table>
 
