@@ -15,5 +15,21 @@
 
 <h1> velkommen til adminstrator siden</h1>
 
+
+<c:forEach var="person" items="${applicationScope.kunder}">
+
+    <br>
+    ${person.value.navn}
+
+
+
+</c:forEach>
+
+
+
+
+
+
+
 </body>
 </html>
