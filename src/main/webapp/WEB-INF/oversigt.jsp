@@ -28,6 +28,23 @@
 
 
 
+<table>
+    <tr>
+        <th>Navn</th>
+        <th>Valg</th>
+
+    </tr>
+    <tr>
+        <td>palle</td>
+        <td>Maria Anders</td>
+
+    </tr>
+
+</table>
+
+
+
+
 
 
 
