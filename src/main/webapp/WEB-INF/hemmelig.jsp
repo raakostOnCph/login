@@ -24,6 +24,13 @@ l
 <br>
 <br>
 
+<form action="ServletLogOut">
+
+    <input type="submit" value="log af">
+</form>
+
+
+
 
 
 </body>

@@ -48,7 +48,8 @@ public class HelloServlet extends HttpServlet
         System.out.println(navn + " " + kode);
 
 
-        if (request.getSession(false) != null ) {
+
+        if (request.getSession(false) == null || !request.isRequestedSessionIdValid() ) {
 
             System.out.println("vi kender allerede brugeren");
             request.getRequestDispatcher("WEB-INF/hemmelig.jsp").forward(request,response);
