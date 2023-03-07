@@ -23,7 +23,7 @@ public class HelloServlet extends HttpServlet
         personList.add(new Person("ida", "666"));
         personList.add(new Person("lone", "1234"));
         personList.add(new Person("Lonny", "313"));
-        personList.add(new Person("Feehaar", "4545"));
+        personList.add(new Person("Feehaar", "4545", "admin"));
 
         Map<String, Person> personMap = new HashMap<>();
 
