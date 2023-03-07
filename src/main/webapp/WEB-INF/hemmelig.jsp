@@ -25,12 +25,6 @@ l
 <br>
 
 
-<form action="ServletlogOut">
-
-    <input type="submit" value="log af">
-</form>
-
-
 
 </body>
 </html>
